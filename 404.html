@@ -1,146 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found | Buildwise Media</title>
+<meta name="robots" content="noindex">
 <link rel="icon" href="https://assets.buildwisemedia.com/favicons/favicon.ico" type="image/x-icon">
+
+<!-- Meta Pixel -->
+<meta name="facebook-domain-verification" content="buildwisemedia">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2728397250833051');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2728397250833051&ev=PageView&noscript=1" alt=""></noscript>
+
+<!-- GA4 via GTM -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P5JSD86L');</script>
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config={theme:{extend:{colors:{void:'#0c0a08',primary:'#BF9469',cta:'#C75B2A',cream:'#f5f0e8',card:'#242019',muted:'#a89a8a',nav:'#1C1714',warm:'#2A2320'},fontFamily:{display:['"Playfair Display"','serif'],body:['"DM Sans"','sans-serif']}}}}
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        void: '#0c0a08',
+        elevated: '#1C1714',
+        card: '#242019',
+        primary: '#BF9469',
+        cta: '#C75B2A',
+        cream: '#f5f0e8',
+        muted: '#a89a8a',
+        warmBrown: '#2A2320',
+      },
+      fontFamily: {
+        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
+      },
+    },
+  },
+}
 </script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P5JSD86L');</script>
-<!-- Meta Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2728397250833051');fbq('track','PageView');</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2728397250833051&ev=PageView&noscript=1"/></noscript>
+
 <style>
-  .nav-scrolled { background-color: #1C1714 !important; }
+  :root {
+    --bg: #0c0a08;
+    --elevated: #1C1714;
+    --card: #242019;
+    --primary: #BF9469;
+    --cta: #C75B2A;
+    --text: #f5f0e8;
+    --muted: #a89a8a;
+    --warm-brown: #2A2320;
+    --header-height: 80px;
+  }
+  html.light {
+    --bg: #f5f0e8;
+    --elevated: #ebe5db;
+    --card: #ddd6cc;
+    --text: #1C1714;
+    --muted: #5a4f44;
+    --warm-brown: #e8e0d4;
+  }
+  html { scroll-padding-top: var(--header-height); }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+  .hero-animate { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+  .hero-delay-1 { animation-delay: 0.2s; }
+  .hero-delay-2 { animation-delay: 0.4s; }
+  .hero-delay-3 { animation-delay: 0.6s; }
+  .cta-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--cta); color: #fff; border-radius: 8px;
+    padding: 16px 32px; font-weight: 600; font-size: 15px;
+    transition: all 0.3s ease; min-height: 48px; min-width: 44px;
+    text-decoration: none;
+  }
+  .cta-btn:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(199,91,42,0.3); }
+  .ghost-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--primary); color: var(--primary); border-radius: 8px;
+    padding: 14px 28px; font-weight: 600; font-size: 15px;
+    transition: all 0.3s ease; min-height: 48px; text-decoration: none;
+  }
+  .ghost-btn:hover { background: rgba(191,148,105,0.1); }
+  .section-pad { padding: 96px 24px; }
+  @media (max-width: 768px) { .section-pad { padding: 64px 16px; } }
+  .content-wrap { max-width: 1280px; margin: 0 auto; }
+  .film-grain {
+    position: absolute; inset: 0; pointer-events: none; z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat; background-size: 256px 256px;
+  }
 </style>
 </head>
-<body class="bg-void text-cream font-body antialiased">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5JSD86L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- Nav -->
-<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
-      <a href="/" class="flex-shrink-0">
-        <img src="https://assets.buildwisemedia.com/logos/bwm-logo-primary-terracotta-on-transparent.svg" alt="Buildwise Media" class="h-10">
-      </a>
-      <div class="hidden lg:flex items-center space-x-8">
-        <a href="/" class="text-cream/80 hover:text-primary transition-colors text-sm font-medium">Home</a>
-        <div class="relative group">
-          <button class="text-cream/80 hover:text-primary transition-colors text-sm font-medium flex items-center gap-1">
-            Services
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="absolute top-full left-0 mt-2 w-48 bg-nav rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-warm">
-            <a href="/services/ascend" class="block px-4 py-3 text-sm text-cream/80 hover:text-primary hover:bg-warm/50 rounded-t-lg transition-colors">Ascend</a>
-            <a href="/services/ascend-lite" class="block px-4 py-3 text-sm text-cream/80 hover:text-primary hover:bg-warm/50 rounded-b-lg transition-colors">Ascend Lite</a>
-          </div>
-        </div>
-        <a href="/how-it-works" class="text-cream/80 hover:text-primary transition-colors text-sm font-medium">How It Works</a>
-        <a href="/results" class="text-cream/80 hover:text-primary transition-colors text-sm font-medium">Results</a>
-        <a href="/why-buildwise" class="text-cream/80 hover:text-primary transition-colors text-sm font-medium">Why Buildwise</a>
-      </div>
-      <div class="hidden lg:block">
-        <a href="/book" class="inline-flex items-center px-6 py-3 bg-cta hover:bg-cta/90 text-cream font-semibold text-sm rounded-lg transition-all duration-200 shadow-lg shadow-cta/20 hover:shadow-cta/30">Book Your Strategy Call</a>
-      </div>
-      <button id="mobileMenuBtn" class="lg:hidden text-cream p-2" aria-label="Open menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+<body class="antialiased">
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5JSD86L" height="0" width="0" style="display:none;visibility:hidden" title="GTM"></iframe></noscript>
+
+<!-- ==================== NAV ==================== -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);">
+  <div class="content-wrap flex items-center justify-between px-6 py-4" style="height:var(--header-height);">
+    <a href="/" aria-label="Buildwise Media Home">
+      <img src="https://assets.buildwisemedia.com/logos/bwm-logo-primary-terracotta-on-transparent.svg" alt="Buildwise Media logo" class="h-10 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-body text-sm font-medium" style="color:var(--text);">
+      <a href="/services" class="hover:text-primary transition-colors">Services</a>
+      <a href="/how-it-works" class="hover:text-primary transition-colors">How It Works</a>
+      <a href="/results" class="hover:text-primary transition-colors">Results</a>
+      <a href="/the-poor-four" class="hover:text-primary transition-colors">The Poor Four</a>
+      <a href="/why-buildwise" class="hover:text-primary transition-colors">Why Buildwise</a>
+      <a href="/book" class="cta-btn text-sm !py-3 !px-6">Book Your Strategy Call</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-4">
+      <button id="theme-toggle" aria-label="Toggle dark/light mode" class="w-10 h-10 flex items-center justify-center rounded-full transition-colors" style="color:var(--muted);">
+        <svg id="icon-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg id="icon-moon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
     </div>
+    <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center" aria-label="Open menu" style="color:var(--text);">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
   </div>
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="lg:hidden hidden bg-nav border-t border-warm">
-    <div class="px-4 py-4 space-y-2">
-      <a href="/" class="block py-2 text-cream/80 hover:text-primary text-sm">Home</a>
-      <a href="/services/ascend" class="block py-2 text-cream/80 hover:text-primary text-sm pl-4">Ascend</a>
-      <a href="/services/ascend-lite" class="block py-2 text-cream/80 hover:text-primary text-sm pl-4">Ascend Lite</a>
-      <a href="/how-it-works" class="block py-2 text-cream/80 hover:text-primary text-sm">How It Works</a>
-      <a href="/results" class="block py-2 text-cream/80 hover:text-primary text-sm">Results</a>
-      <a href="/why-buildwise" class="block py-2 text-cream/80 hover:text-primary text-sm">Why Buildwise</a>
-      <a href="/book" class="block mt-4 text-center px-6 py-3 bg-cta text-cream font-semibold text-sm rounded-lg">Book Your Strategy Call</a>
-    </div>
-  </div>
-</nav>
-
-<!-- 404 Content -->
-<section class="pt-32 pb-20 md:pb-32 min-h-screen flex items-center">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="max-w-xl mx-auto text-center">
-      <p class="text-8xl font-display font-bold text-primary/20 mb-4">404</p>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold text-cream leading-tight mb-6">This Page Doesn't Exist</h1>
-      <p class="text-lg text-muted max-w-md mx-auto leading-relaxed mb-10">The page you're looking for has moved or doesn't exist. Let's get you back on track.</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/book" class="inline-flex items-center px-8 py-4 bg-cta hover:bg-cta/90 text-cream font-semibold text-base rounded-lg transition-all duration-200 shadow-lg shadow-cta/20 hover:shadow-cta/30 hover:scale-105">Book Your Strategy Call</a>
-        <a href="/" class="inline-flex items-center text-muted hover:text-primary text-sm transition-colors gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-          Back to Homepage
-        </a>
+  <div id="mobile-menu" class="lg:hidden hidden" style="background:var(--elevated);">
+    <nav class="flex flex-col gap-4 p-6 font-body text-base font-medium" style="color:var(--text);">
+      <a href="/services" class="py-2 hover:text-primary transition-colors">Services</a>
+      <a href="/how-it-works" class="py-2 hover:text-primary transition-colors">How It Works</a>
+      <a href="/results" class="py-2 hover:text-primary transition-colors">Results</a>
+      <a href="/the-poor-four" class="py-2 hover:text-primary transition-colors">The Poor Four</a>
+      <a href="/why-buildwise" class="py-2 hover:text-primary transition-colors">Why Buildwise</a>
+      <div class="flex items-center justify-between pt-2">
+        <a href="/book" class="cta-btn w-full text-center">Book Your Strategy Call</a>
       </div>
+      <button id="theme-toggle-mobile" aria-label="Toggle dark/light mode" class="flex items-center gap-2 py-2" style="color:var(--muted);">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="text-sm">Toggle theme</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ==================== 404 CONTENT ==================== -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden" style="background:var(--elevated);padding-top:var(--header-height);">
+  <div class="film-grain"></div>
+  <div class="content-wrap relative z-10 text-center px-6 py-16">
+    <!-- Large 404 number -->
+    <p class="font-display text-8xl md:text-9xl font-extrabold hero-animate" style="color:var(--card);-webkit-text-stroke:2px var(--primary);letter-spacing:-0.04em;">404</p>
+
+    <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mt-4 hero-animate hero-delay-1" style="color:var(--text);">
+      This page took a wrong turn.
+    </h1>
+    <p class="mt-4 text-lg leading-relaxed hero-animate hero-delay-2" style="color:var(--muted);max-width:44ch;margin-left:auto;margin-right:auto;">
+      The page you're looking for doesn't exist or has moved.
+    </p>
+
+    <div class="mt-10 flex flex-wrap gap-4 justify-center hero-animate hero-delay-3">
+      <a href="/book" class="cta-btn text-base px-8 py-4">Book Your Strategy Call</a>
+      <a href="/" class="ghost-btn">Back to Home</a>
     </div>
   </div>
 </section>
+</main>
 
-<!-- Footer -->
-<footer class="bg-nav border-t border-warm/20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid md:grid-cols-4 gap-10">
-      <div class="md:col-span-1">
-        <a href="/"><img src="https://assets.buildwisemedia.com/logos/bwm-logo-primary-terracotta-on-transparent.svg" alt="Buildwise Media" class="h-10 mb-4"></a>
-        <p class="text-muted text-sm italic">Build Today. Secure Tomorrow. Live Fully.</p>
+<!-- ==================== FOOTER ==================== -->
+<footer class="section-pad" style="background:var(--bg);border-top:1px solid rgba(191,148,105,0.1);">
+  <div class="content-wrap">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <img src="https://assets.buildwisemedia.com/logos/bwm-logo-primary-terracotta-on-transparent.svg" alt="Buildwise Media logo" class="h-8 mb-4">
+        <p class="text-sm leading-relaxed" style="color:var(--muted);">Build Today. Secure Tomorrow. Live Fully.</p>
       </div>
       <div>
-        <h4 class="text-cream font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h4>
-        <ul class="space-y-2">
-          <li><a href="/" class="text-muted hover:text-primary text-sm transition-colors">Home</a></li>
-          <li><a href="/services/ascend" class="text-muted hover:text-primary text-sm transition-colors">Ascend</a></li>
-          <li><a href="/services/ascend-lite" class="text-muted hover:text-primary text-sm transition-colors">Ascend Lite</a></li>
-          <li><a href="/how-it-works" class="text-muted hover:text-primary text-sm transition-colors">How It Works</a></li>
-          <li><a href="/results" class="text-muted hover:text-primary text-sm transition-colors">Results</a></li>
-          <li><a href="/why-buildwise" class="text-muted hover:text-primary text-sm transition-colors">Why Buildwise</a></li>
-        </ul>
+        <h4 class="font-display font-semibold text-sm mb-4" style="color:var(--text);">Services</h4>
+        <nav class="flex flex-col gap-2 text-sm" style="color:var(--muted);">
+          <a href="/services" class="hover:text-primary transition-colors">All Services</a>
+          <a href="/services/ascend" class="hover:text-primary transition-colors">Ascend</a>
+          <a href="/services/ascend-lite" class="hover:text-primary transition-colors">Ascend Lite</a>
+        </nav>
       </div>
       <div>
-        <h4 class="text-cream font-semibold text-sm uppercase tracking-wider mb-4">Legal</h4>
-        <ul class="space-y-2">
-          <li><a href="/privacy" class="text-muted hover:text-primary text-sm transition-colors">Privacy Policy</a></li>
-          <li><a href="/terms" class="text-muted hover:text-primary text-sm transition-colors">Terms of Service</a></li>
-        </ul>
+        <h4 class="font-display font-semibold text-sm mb-4" style="color:var(--text);">Company</h4>
+        <nav class="flex flex-col gap-2 text-sm" style="color:var(--muted);">
+          <a href="/why-buildwise" class="hover:text-primary transition-colors">Why Buildwise</a>
+          <a href="/how-it-works" class="hover:text-primary transition-colors">How It Works</a>
+          <a href="/results" class="hover:text-primary transition-colors">Results</a>
+          <a href="/the-poor-four" class="hover:text-primary transition-colors">The Poor Four</a>
+        </nav>
       </div>
       <div>
-        <h4 class="text-cream font-semibold text-sm uppercase tracking-wider mb-4">Contact</h4>
-        <ul class="space-y-2">
-          <li><a href="mailto:hello@buildwisemedia.com" class="text-muted hover:text-primary text-sm transition-colors">hello@buildwisemedia.com</a></li>
-          <li><a href="tel:+17653377805" class="text-muted hover:text-primary text-sm transition-colors">(765) 337-7805</a></li>
-          <li><span class="text-muted text-sm">Alpharetta, GA</span></li>
-        </ul>
+        <h4 class="font-display font-semibold text-sm mb-4" style="color:var(--text);">Legal</h4>
+        <nav class="flex flex-col gap-2 text-sm" style="color:var(--muted);">
+          <a href="/privacy" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="/terms" class="hover:text-primary transition-colors">Terms of Service</a>
+        </nav>
+        <p class="mt-4 text-xs" style="color:var(--muted);">hello@buildwisemedia.com</p>
+        <p class="text-xs" style="color:var(--muted);">Alpharetta, Georgia</p>
       </div>
     </div>
-    <div class="border-t border-warm/20 mt-12 pt-8 text-center">
-      <p class="text-muted text-sm">&copy; 2026 Buildwise Media LLC. All rights reserved.</p>
+    <div class="pt-8 text-center text-xs" style="border-top:1px solid rgba(191,148,105,0.08);color:var(--muted);">
+      &copy; 2026 Buildwise Media LLC. All rights reserved.
     </div>
   </div>
 </footer>
 
+<!-- ==================== SCRIPTS ==================== -->
 <script>
-// Nav scroll behavior
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) { nav.classList.add('nav-scrolled', 'shadow-lg'); nav.style.backgroundColor = '#1C1714'; }
-  else { nav.classList.remove('nav-scrolled', 'shadow-lg'); nav.style.backgroundColor = 'transparent'; }
-});
+// ---- Theme Toggle ----
+(function() {
+  const html = document.documentElement;
+  const saved = document.cookie.match(/theme=(dark|light)/);
+  if (saved) {
+    html.classList.toggle('dark', saved[1] === 'dark');
+    html.classList.toggle('light', saved[1] === 'light');
+  } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+    html.classList.remove('dark'); html.classList.add('light');
+  }
+  function toggle() {
+    const isDark = html.classList.contains('dark');
+    html.classList.toggle('dark', !isDark);
+    html.classList.toggle('light', isDark);
+    document.cookie = 'theme=' + (isDark ? 'light' : 'dark') + ';path=/;max-age=31536000;SameSite=Lax';
+    updateIcons();
+  }
+  function updateIcons() {
+    const isDark = html.classList.contains('dark');
+    document.querySelectorAll('#icon-sun').forEach(el => el.classList.toggle('hidden', isDark));
+    document.querySelectorAll('#icon-moon').forEach(el => el.classList.toggle('hidden', !isDark));
+  }
+  updateIcons();
+  document.getElementById('theme-toggle')?.addEventListener('click', toggle);
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggle);
+})();
 
-// Mobile menu
-document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+// ---- Mobile Menu ----
+(function() {
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    btn.setAttribute('aria-expanded', !open);
+  });
+})();
+
+// ---- Sticky Nav Background ----
+(function() {
+  const header = document.getElementById('site-header');
+  function onScroll() {
+    if (window.scrollY > 60) {
+      header.style.background = 'var(--elevated)';
+      header.style.boxShadow = '0 2px 16px rgba(0,0,0,0.2)';
+    } else {
+      header.style.background = 'transparent';
+      header.style.boxShadow = 'none';
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 </script>
 </body>
 </html>

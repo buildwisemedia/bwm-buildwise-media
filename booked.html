@@ -1,191 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You're Booked | Buildwise Media</title>
-<meta name="robots" content="noindex,nofollow">
-<link rel="canonical" href="https://buildwisemedia.com/booked">
+<meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="https://assets.buildwisemedia.com/favicons/favicon.ico" type="image/x-icon">
+
+<!-- Meta Pixel -->
+<meta name="facebook-domain-verification" content="buildwisemedia">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2728397250833051');fbq('track','PageView');fbq('track','Schedule');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2728397250833051&ev=PageView&noscript=1" alt=""></noscript>
+
+<!-- GA4 via GTM -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P5JSD86L');</script>
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config={theme:{extend:{colors:{void:'#0c0a08',primary:'#BF9469',cta:'#C75B2A',cream:'#f5f0e8',card:'#242019',muted:'#a89a8a',nav:'#1C1714',warm:'#2A2320'},fontFamily:{display:['"Playfair Display"','serif'],body:['"DM Sans"','sans-serif']}}}}
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        void: '#0c0a08',
+        elevated: '#1C1714',
+        card: '#242019',
+        primary: '#BF9469',
+        cta: '#C75B2A',
+        cream: '#f5f0e8',
+        muted: '#a89a8a',
+        warmBrown: '#2A2320',
+      },
+      fontFamily: {
+        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
+      },
+    },
+  },
+}
 </script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P5JSD86L');</script>
-<!-- Meta Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2728397250833051');fbq('track','PageView');fbq('track','Schedule');</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2728397250833051&ev=PageView&noscript=1"/></noscript>
-<!-- Conversion tracking -->
-<script>
-window.dataLayer = window.dataLayer || [];
-dataLayer.push({'event': 'booking_confirmed'});
-</script>
-<style>
-  .nav-scrolled { background-color: #1C1714 !important; }
-</style>
-</head>
-<body class="bg-void text-cream font-body antialiased">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5JSD86L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- Nav -->
-<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
-      <a href="/" class="flex-shrink-0">
-        <img src="https://assets.buildwisemedia.com/logos/bwm-logo-primary-terracotta-on-transparent.svg" alt="Buildwise Media" class="h-10">
-      </a>
-      <div class="hidden lg:flex items-center space-x-8">
-        <a href="/" class="text-cream/80 hover:text-primary transition-colors text-sm font-medium">Home</a>
-        <div class="relative group">
-          <button class="text-cream/80 hover:text-primary transition-colors text-sm font-medium flex items-center gap-1">
-            Services
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="absolute top-full left-0 mt-2 w-48 bg-nav rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-warm">
-            <a href="/services/ascend" class="block px-4 py-3 text-sm text-cream/80 hover:text-primary hover:bg-warm/50 rounded-t-lg transition-colors">Ascend</a>
-            <a href="/services/ascend-lite" class="block px-4 py-3 text-sm text-cream/80 hover:text-primary hover:bg-warm/50 rounded-b-lg transition-colors">Ascend Lite</a>
-          </div>
-        </div>
-        <a href="/how-it-works" class="text-cream/80 hover:text-primary transition-colors text-sm font-medium">How It Works</a>
-        <a href="/results" class="text-cream/80 hover:text-primary transition-colors text-sm font-medium">Results</a>
-        <a href="/why-buildwise" class="text-cream/80 hover:text-primary transition-colors text-sm font-medium">Why Buildwise</a>
-      </div>
-      <div class="hidden lg:block">
-        <a href="/book" class="inline-flex items-center px-6 py-3 bg-cta hover:bg-cta/90 text-cream font-semibold text-sm rounded-lg transition-all duration-200 shadow-lg shadow-cta/20 hover:shadow-cta/30">Book Your Strategy Call</a>
-      </div>
-      <button id="mobileMenuBtn" class="lg:hidden text-cream p-2" aria-label="Open menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+<style>
+  :root {
+    --bg: #0c0a08;
+    --elevated: #1C1714;
+    --card: #242019;
+    --primary: #BF9469;
+    --cta: #C75B2A;
+    --text: #f5f0e8;
+    --muted: #a89a8a;
+    --warm-brown: #2A2320;
+    --header-height: 80px;
+  }
+  html.light {
+    --bg: #f5f0e8;
+    --elevated: #ebe5db;
+    --card: #ddd6cc;
+    --text: #1C1714;
+    --muted: #5a4f44;
+    --warm-brown: #e8e0d4;
+  }
+  html { scroll-padding-top: var(--header-height); }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+  .hero-animate { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+  .hero-delay-1 { animation-delay: 0.2s; }
+  .hero-delay-2 { animation-delay: 0.4s; }
+  .hero-delay-3 { animation-delay: 0.6s; }
+  .cta-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--cta); color: #fff; border-radius: 8px;
+    padding: 16px 32px; font-weight: 600; font-size: 15px;
+    transition: all 0.3s ease; min-height: 48px; min-width: 44px;
+    text-decoration: none;
+  }
+  .cta-btn:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(199,91,42,0.3); }
+  .ghost-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--primary); color: var(--primary); border-radius: 8px;
+    padding: 14px 28px; font-weight: 600; font-size: 15px;
+    transition: all 0.3s ease; min-height: 48px; text-decoration: none;
+  }
+  .ghost-btn:hover { background: rgba(191,148,105,0.1); }
+  .section-pad { padding: 96px 24px; }
+  @media (max-width: 768px) { .section-pad { padding: 64px 16px; } }
+  .content-wrap { max-width: 1280px; margin: 0 auto; }
+  @keyframes checkmark {
+    0% { stroke-dashoffset: 50; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .checkmark-circle { stroke-dasharray: 50; stroke-dashoffset: 50; animation: checkmark 0.6s ease 0.3s forwards; }
+</style>
+
+<!-- JSON-LD: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://buildwisemedia.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Book a Strategy Call", "item": "https://buildwisemedia.com/book" },
+    { "@type": "ListItem", "position": 3, "name": "Confirmed", "item": "https://buildwisemedia.com/booked" }
+  ]
+}
+</script>
+</head>
+
+<body class="antialiased">
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5JSD86L" height="0" width="0" style="display:none;visibility:hidden" title="GTM"></iframe></noscript>
+
+<!-- ==================== NAV ==================== -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);">
+  <div class="content-wrap flex items-center justify-between px-6 py-4" style="height:var(--header-height);">
+    <a href="/" aria-label="Buildwise Media Home">
+      <img src="https://assets.buildwisemedia.com/logos/bwm-logo-primary-terracotta-on-transparent.svg" alt="Buildwise Media logo" class="h-10 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-body text-sm font-medium" style="color:var(--text);">
+      <a href="/services" class="hover:text-primary transition-colors">Services</a>
+      <a href="/how-it-works" class="hover:text-primary transition-colors">How It Works</a>
+      <a href="/results" class="hover:text-primary transition-colors">Results</a>
+      <a href="/the-poor-four" class="hover:text-primary transition-colors">The Poor Four</a>
+      <a href="/why-buildwise" class="hover:text-primary transition-colors">Why Buildwise</a>
+      <a href="/book" class="cta-btn text-sm !py-3 !px-6">Book Your Strategy Call</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-4">
+      <button id="theme-toggle" aria-label="Toggle dark/light mode" class="w-10 h-10 flex items-center justify-center rounded-full transition-colors" style="color:var(--muted);">
+        <svg id="icon-sun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg id="icon-moon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
     </div>
+    <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center" aria-label="Open menu" style="color:var(--text);">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
   </div>
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="lg:hidden hidden bg-nav border-t border-warm">
-    <div class="px-4 py-4 space-y-2">
-      <a href="/" class="block py-2 text-cream/80 hover:text-primary text-sm">Home</a>
-      <a href="/services/ascend" class="block py-2 text-cream/80 hover:text-primary text-sm pl-4">Ascend</a>
-      <a href="/services/ascend-lite" class="block py-2 text-cream/80 hover:text-primary text-sm pl-4">Ascend Lite</a>
-      <a href="/how-it-works" class="block py-2 text-cream/80 hover:text-primary text-sm">How It Works</a>
-      <a href="/results" class="block py-2 text-cream/80 hover:text-primary text-sm">Results</a>
-      <a href="/why-buildwise" class="block py-2 text-cream/80 hover:text-primary text-sm">Why Buildwise</a>
-      <a href="/book" class="block mt-4 text-center px-6 py-3 bg-cta text-cream font-semibold text-sm rounded-lg">Book Your Strategy Call</a>
+  <div id="mobile-menu" class="lg:hidden hidden" style="background:var(--elevated);">
+    <nav class="flex flex-col gap-4 p-6 font-body text-base font-medium" style="color:var(--text);">
+      <a href="/services" class="py-2 hover:text-primary transition-colors">Services</a>
+      <a href="/how-it-works" class="py-2 hover:text-primary transition-colors">How It Works</a>
+      <a href="/results" class="py-2 hover:text-primary transition-colors">Results</a>
+      <a href="/the-poor-four" class="py-2 hover:text-primary transition-colors">The Poor Four</a>
+      <a href="/why-buildwise" class="py-2 hover:text-primary transition-colors">Why Buildwise</a>
+      <div class="flex items-center justify-between pt-2">
+        <a href="/book" class="cta-btn w-full text-center">Book Your Strategy Call</a>
+      </div>
+      <button id="theme-toggle-mobile" aria-label="Toggle dark/light mode" class="flex items-center gap-2 py-2" style="color:var(--muted);">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="text-sm">Toggle theme</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ==================== CONFIRMATION ==================== -->
+<section class="min-h-[80vh] flex items-center section-pad" style="padding-top:calc(var(--header-height) + 3rem);background:var(--bg);">
+  <div class="content-wrap max-w-2xl mx-auto text-center">
+    <!-- Animated checkmark -->
+    <div class="mx-auto mb-8 w-20 h-20 rounded-full flex items-center justify-center hero-animate" style="background:rgba(199,91,42,0.1);border:2px solid var(--cta);">
+      <svg class="w-10 h-10" fill="none" stroke="var(--cta)" stroke-width="3" viewBox="0 0 24 24">
+        <path class="checkmark-circle" d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
-  </div>
-</nav>
 
-<!-- Confirmation Content -->
-<section class="pt-32 pb-20 md:pb-32 min-h-screen flex items-center">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="max-w-2xl mx-auto text-center">
-      <!-- Success icon -->
-      <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">
-        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <h1 class="font-display text-4xl md:text-5xl font-extrabold leading-tight hero-animate hero-delay-1" style="color:var(--text);">
+      You're booked.
+    </h1>
+    <p class="mt-4 text-lg leading-relaxed hero-animate hero-delay-2" style="color:var(--muted);max-width:44ch;margin-left:auto;margin-right:auto;">
+      Check your email for a calendar invite with the call details. We're looking forward to it.
+    </p>
+
+    <!-- What to Expect -->
+    <div class="mt-12 text-left grid md:grid-cols-2 gap-6 hero-animate hero-delay-3">
+      <div class="p-6 rounded-xl" style="background:var(--elevated);border:1px solid rgba(191,148,105,0.08);">
+        <h2 class="font-display font-bold text-base mb-4" style="color:var(--text);">What to expect</h2>
+        <ul class="space-y-3 text-sm" style="color:var(--muted);">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>A 15-minute call. No fluff, no filler.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+            <span>We'll review your business, your market, and where the gaps are.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+            <span>We'll be honest if we're not the right fit.</span>
+          </li>
+        </ul>
       </div>
 
-      <h1 class="font-display text-4xl sm:text-5xl font-bold text-cream leading-tight mb-6">You're Booked — <span class="text-primary">Here's What Happens Next</span></h1>
-
-      <div class="space-y-6 mt-12 text-left">
-        <div class="bg-card rounded-xl p-6 border border-warm/30 flex items-start gap-5">
-          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-cta/10 flex items-center justify-center">
-            <span class="text-cta font-bold text-sm">1</span>
-          </div>
-          <div>
-            <p class="text-cream font-medium">Calendar invite incoming</p>
-            <p class="text-muted text-sm mt-1">You'll receive a calendar invite with a video link within 5 minutes.</p>
-          </div>
-        </div>
-
-        <div class="bg-card rounded-xl p-6 border border-warm/30 flex items-start gap-5">
-          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-cta/10 flex items-center justify-center">
-            <span class="text-cta font-bold text-sm">2</span>
-          </div>
-          <div>
-            <p class="text-cream font-medium">We do our homework</p>
-            <p class="text-muted text-sm mt-1">We'll review your business, your market, and your current marketing before the call.</p>
-          </div>
-        </div>
-
-        <div class="bg-card rounded-xl p-6 border border-warm/30 flex items-start gap-5">
-          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-cta/10 flex items-center justify-center">
-            <span class="text-cta font-bold text-sm">3</span>
-          </div>
-          <div>
-            <p class="text-cream font-medium">Clarity, not a pitch</p>
-            <p class="text-muted text-sm mt-1">On the call, we'll walk through whether a Revenue Engine fits your business. No pitch. Just clarity.</p>
-          </div>
-        </div>
+      <div class="p-6 rounded-xl" style="background:var(--elevated);border:1px solid rgba(191,148,105,0.08);">
+        <h2 class="font-display font-bold text-base mb-4" style="color:var(--text);">What to prepare</h2>
+        <ul class="space-y-3 text-sm" style="color:var(--muted);">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            <span>Your website URL (if you have one)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+            <span>A rough idea of your current marketing spend</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color:var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            <span>Your goals for the next 6-12 months</span>
+          </li>
+        </ul>
       </div>
+    </div>
 
-      <div class="mt-12 bg-card rounded-xl p-6 border border-primary/20">
-        <p class="text-muted text-sm">Questions before your call? Email <a href="mailto:hello@buildwisemedia.com" class="text-primary hover:text-primary/80 underline underline-offset-2 transition-colors">hello@buildwisemedia.com</a></p>
-      </div>
-
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/" class="text-muted hover:text-primary text-sm transition-colors underline underline-offset-4">Back to Homepage</a>
-        <span class="text-warm hidden sm:inline">|</span>
-        <a href="/services/ascend" class="text-muted hover:text-primary text-sm transition-colors underline underline-offset-4">Explore Our Services</a>
-      </div>
+    <div class="mt-10 hero-animate hero-delay-3">
+      <a href="/" class="ghost-btn">Back to Home</a>
     </div>
   </div>
 </section>
+</main>
 
-<!-- Footer -->
-<footer class="bg-nav border-t border-warm/20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid md:grid-cols-4 gap-10">
-      <div class="md:col-span-1">
-        <a href="/"><img src="https://assets.buildwisemedia.com/logos/bwm-logo-primary-terracotta-on-transparent.svg" alt="Buildwise Media" class="h-10 mb-4"></a>
-        <p class="text-muted text-sm italic">Build Today. Secure Tomorrow. Live Fully.</p>
+<!-- ==================== FOOTER ==================== -->
+<footer class="section-pad" style="background:var(--bg);border-top:1px solid rgba(191,148,105,0.1);">
+  <div class="content-wrap">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <img src="https://assets.buildwisemedia.com/logos/bwm-logo-primary-terracotta-on-transparent.svg" alt="Buildwise Media logo" class="h-8 mb-4">
+        <p class="text-sm leading-relaxed" style="color:var(--muted);">Build Today. Secure Tomorrow. Live Fully.</p>
       </div>
       <div>
-        <h4 class="text-cream font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h4>
-        <ul class="space-y-2">
-          <li><a href="/" class="text-muted hover:text-primary text-sm transition-colors">Home</a></li>
-          <li><a href="/services/ascend" class="text-muted hover:text-primary text-sm transition-colors">Ascend</a></li>
-          <li><a href="/services/ascend-lite" class="text-muted hover:text-primary text-sm transition-colors">Ascend Lite</a></li>
-          <li><a href="/how-it-works" class="text-muted hover:text-primary text-sm transition-colors">How It Works</a></li>
-          <li><a href="/results" class="text-muted hover:text-primary text-sm transition-colors">Results</a></li>
-          <li><a href="/why-buildwise" class="text-muted hover:text-primary text-sm transition-colors">Why Buildwise</a></li>
-        </ul>
+        <h4 class="font-display font-semibold text-sm mb-4" style="color:var(--text);">Services</h4>
+        <nav class="flex flex-col gap-2 text-sm" style="color:var(--muted);">
+          <a href="/services" class="hover:text-primary transition-colors">All Services</a>
+          <a href="/services/ascend" class="hover:text-primary transition-colors">Ascend</a>
+          <a href="/services/ascend-lite" class="hover:text-primary transition-colors">Ascend Lite</a>
+        </nav>
       </div>
       <div>
-        <h4 class="text-cream font-semibold text-sm uppercase tracking-wider mb-4">Legal</h4>
-        <ul class="space-y-2">
-          <li><a href="/privacy" class="text-muted hover:text-primary text-sm transition-colors">Privacy Policy</a></li>
-          <li><a href="/terms" class="text-muted hover:text-primary text-sm transition-colors">Terms of Service</a></li>
-        </ul>
+        <h4 class="font-display font-semibold text-sm mb-4" style="color:var(--text);">Company</h4>
+        <nav class="flex flex-col gap-2 text-sm" style="color:var(--muted);">
+          <a href="/why-buildwise" class="hover:text-primary transition-colors">Why Buildwise</a>
+          <a href="/how-it-works" class="hover:text-primary transition-colors">How It Works</a>
+          <a href="/results" class="hover:text-primary transition-colors">Results</a>
+          <a href="/the-poor-four" class="hover:text-primary transition-colors">The Poor Four</a>
+        </nav>
       </div>
       <div>
-        <h4 class="text-cream font-semibold text-sm uppercase tracking-wider mb-4">Contact</h4>
-        <ul class="space-y-2">
-          <li><a href="mailto:hello@buildwisemedia.com" class="text-muted hover:text-primary text-sm transition-colors">hello@buildwisemedia.com</a></li>
-          <li><a href="tel:+17653377805" class="text-muted hover:text-primary text-sm transition-colors">(765) 337-7805</a></li>
-          <li><span class="text-muted text-sm">Alpharetta, GA</span></li>
-        </ul>
+        <h4 class="font-display font-semibold text-sm mb-4" style="color:var(--text);">Legal</h4>
+        <nav class="flex flex-col gap-2 text-sm" style="color:var(--muted);">
+          <a href="/privacy" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="/terms" class="hover:text-primary transition-colors">Terms of Service</a>
+        </nav>
+        <p class="mt-4 text-xs" style="color:var(--muted);">hello@buildwisemedia.com</p>
+        <p class="text-xs" style="color:var(--muted);">Alpharetta, Georgia</p>
       </div>
     </div>
-    <div class="border-t border-warm/20 mt-12 pt-8 text-center">
-      <p class="text-muted text-sm">&copy; 2026 Buildwise Media LLC. All rights reserved.</p>
+    <div class="pt-8 text-center text-xs" style="border-top:1px solid rgba(191,148,105,0.08);color:var(--muted);">
+      &copy; 2026 Buildwise Media LLC. All rights reserved.
     </div>
   </div>
 </footer>
 
+<!-- ==================== SCRIPTS ==================== -->
 <script>
-// Nav scroll behavior
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) { nav.classList.add('nav-scrolled', 'shadow-lg'); nav.style.backgroundColor = '#1C1714'; }
-  else { nav.classList.remove('nav-scrolled', 'shadow-lg'); nav.style.backgroundColor = 'transparent'; }
-});
+// ---- Theme Toggle ----
+(function() {
+  const html = document.documentElement;
+  const saved = document.cookie.match(/theme=(dark|light)/);
+  if (saved) {
+    html.classList.toggle('dark', saved[1] === 'dark');
+    html.classList.toggle('light', saved[1] === 'light');
+  } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+    html.classList.remove('dark'); html.classList.add('light');
+  }
+  function toggle() {
+    const isDark = html.classList.contains('dark');
+    html.classList.toggle('dark', !isDark);
+    html.classList.toggle('light', isDark);
+    document.cookie = 'theme=' + (isDark ? 'light' : 'dark') + ';path=/;max-age=31536000;SameSite=Lax';
+    updateIcons();
+  }
+  function updateIcons() {
+    const isDark = html.classList.contains('dark');
+    document.querySelectorAll('#icon-sun').forEach(el => el.classList.toggle('hidden', isDark));
+    document.querySelectorAll('#icon-moon').forEach(el => el.classList.toggle('hidden', !isDark));
+  }
+  updateIcons();
+  document.getElementById('theme-toggle')?.addEventListener('click', toggle);
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggle);
+})();
 
-// Mobile menu
-document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+// ---- Mobile Menu ----
+(function() {
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    btn.setAttribute('aria-expanded', !open);
+  });
+})();
+
+// ---- Sticky Nav Background ----
+(function() {
+  const header = document.getElementById('site-header');
+  function onScroll() {
+    if (window.scrollY > 60) {
+      header.style.background = 'var(--elevated)';
+      header.style.boxShadow = '0 2px 16px rgba(0,0,0,0.2)';
+    } else {
+      header.style.background = 'transparent';
+      header.style.boxShadow = 'none';
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// ---- Scroll Reveal ----
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
 </script>
 </body>
 </html>
